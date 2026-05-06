@@ -132,8 +132,9 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 fi
 
 export PATH="$HOME/.npm-global/bin:$PATH"
-export LAMBDA_PURE_NODE=false
 
+# pure zsh stuff
+export LAMBDA_PURE_NODE=false
 fpath=("$HOME/.zfunctions" $fpath)
 autoload -U promptinit
 promptinit
