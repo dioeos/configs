@@ -123,3 +123,10 @@ alias ndot="nvim ~/dotfiles"
 alias j="cd .."
 alias 2j="cd ..."
 alias 3j="cd ...."
+
+# ==========
+# STARTUP EDITS
+# ==========
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi
