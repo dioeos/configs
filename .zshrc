@@ -133,9 +133,7 @@ fi
 
 export PATH="$HOME/.npm-global/bin:$PATH"
 
-# pure zsh stuff
-export LAMBDA_PURE_NODE=false
-fpath=("$HOME/.zfunctions" $fpath)
-autoload -U promptinit
-promptinit
-prompt lambda-pure
+PURE_PROMPT_SYMBOL="λ"
+fpath+=($HOME/tools/purezsh)
+autoload -U promptinit; promptinit
+prompt pure
