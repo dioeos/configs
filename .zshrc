@@ -132,6 +132,7 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 fi
 
 export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 PURE_PROMPT_SYMBOL="λ"
 fpath+=($HOME/tools/purezsh)
