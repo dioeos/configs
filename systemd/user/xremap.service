@@ -7,5 +7,5 @@ Requisite=graphical-session.target
 WantedBy=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swaybg -m fill -i "%h/Downloads/bg2.png"
+ExecStart=/home/dio/dotfiles/scripts/system/xremap.sh
 Restart=on-failure
