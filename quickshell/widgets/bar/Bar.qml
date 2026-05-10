@@ -4,7 +4,9 @@ import QtQuick
 
 import "../clock" as ClockWidget
 import "../battery" as BatteryWidget
-import "../network/" as NetworkWidget
+import "../network" as NetworkWidget
+import "../niri/window" as NiriWindowWidget
+
 
 Scope {
   id: barRoot
@@ -49,5 +51,15 @@ Scope {
         rightMargin: 70
       }
     }
+
+    NiriWindowWidget.Window {
+      id: niriWindowWidget
+      anchors {
+        left: parent.left
+        verticalCenter: parent.verticalCenter
+        leftMargin: 30
+      }
+    }
+
   }
 }
