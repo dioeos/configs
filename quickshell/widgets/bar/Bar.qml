@@ -4,6 +4,7 @@ import QtQuick
 
 import "../clock" as ClockWidget
 import "../battery" as BatteryWidget
+import "../network/" as NetworkWidget
 
 Scope {
   id: barRoot
@@ -37,6 +38,15 @@ Scope {
         right: parent.right
         verticalCenter: parent.verticalCenter
         rightMargin: 30
+      }
+    }
+
+    NetworkWidget.Network {
+      id: networkWidget
+      anchors {
+        right: parent.right
+        verticalCenter: parent.verticalCenter
+        rightMargin: 50
       }
     }
   }
