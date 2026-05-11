@@ -7,7 +7,7 @@ QtObject {
   // ACCENT COLORS
   // ==========
   property color cyberGreen: "#afff4f"
-  property color netRed: "#df0510"
+  property color netRed: "#d19299"
 
   // ==========
   // TEXT COLORS

@@ -2,9 +2,38 @@ background-opacity = 1
 background-blur = false
 font-size = 14
 window-decoration = none
-theme = Black Metal (Immortal)
+# theme = Black Metal (Immortal)
+theme = "Black Metal (Venom)"
 font-family = "IosevkaTerm Nerd Font"
 cursor-style = block
 cursor-style-blink = true
 window-padding-x = 2,0
 window-padding-y = 2,2
+
+# --- Core ---
+background = #191919
+# foreground = #e4e8ee
+#
+# cursor-color = #11c7fe
+# cursor-text = #191919
+#
+# selection-background = #e4e8ee
+# selection-foreground = #191919
+
+# --- ANSI Palette ---
+# palette = 0=#191919
+# palette = 1=#edd1ce
+# palette = 2=#e4e8ee
+# palette = 3=#e9d700
+# palette = 4=#e4e8ee
+# palette = 5=#e4e8ee
+# palette = 6=#e4e8ee
+# palette = 7=#e4e8ee
+# palette = 8=#e4e8ee
+# palette = 9=#e4e8ee
+# palette = 10=#e4e8ee
+# palette = 11=#e4e8ee
+# palette = 12=#e4e8ee
+# palette = 13=#e4e8ee
+# palette = 14=#e4e8ee
+# palette = 15=#ffffff
