@@ -2,12 +2,17 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
+import "../../.." as Root
+
 Item {
   id: niriWindowRoot
 
   property string focusedTitle: "No focused window"
   property string focusedAppId: ""
-  property string rawJson: ""
+
+  implicitWidth: focusedText.implicitWidth
+  implicitHeight: focusedText.implicitHeight
+
 
   Socket {
     id: sashaSocket
@@ -18,7 +23,6 @@ Item {
       splitMarker: "\n"
 
       onRead: data => {
-        rawJson = data
 
         const event = JSON.parse(data)
 
@@ -29,6 +33,11 @@ Item {
           niriWindowRoot.focusedAppId =
             event.SashaWindowFocusedChanged.id ?? ""
         }
+
+        if (event.SashaWindowOpenedOrChanged) {
+          niriWindowRoot.focusedTitle =
+            event.SashaWindowOpenedOrChanged.window_name ?? "No focused window"
+        }
       }
     }
 
@@ -37,8 +46,20 @@ Item {
     }
   }
 
+  Timer {
+    id: reconnectTimer
+    interval: 1000
+    repeat: false
+    onTriggered: {
+      sashaSocket.connected = true
+    }
+  }
+
   Text {
+    id: focusedText
     text: niriWindowRoot.focusedTitle
-    color: "white"
+    color: Root.ColorManager.netRed
+    font.family: Root.FontManager.ntype82FontFamily
+    font.pixelSize: Root.FontManager.fontNormal
   }
 }
