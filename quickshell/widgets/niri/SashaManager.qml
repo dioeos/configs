@@ -12,6 +12,7 @@ QtObject {
   property string hello
   property string focusedTitle
   property int focusedWorkspaceId: 1
+  property var workspaceIdxs: []
 
   property Socket socket: Socket {
     id: sashaSocket
@@ -26,7 +27,12 @@ QtObject {
         const event = JSON.parse(data)
 
         if (event.SashaWorkspacesChanged) {
-          sashaManagerRoot.hello = Util.hello()
+
+          const workspaces =
+            event.SashaWorkspacesChanged.sasha_workspaces
+
+          sashaManagerRoot.workspaceIdxs = Util.get_workspace_idxs(workspaces)
+          
         }
 
         if (event.SashaWindowFocusedChanged) {

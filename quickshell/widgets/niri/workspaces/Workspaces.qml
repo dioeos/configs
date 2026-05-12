@@ -12,8 +12,7 @@ Item {
 
   Text {
     id: focusedText
-    // text: SashaRoot.SashaManager.focusedWorkspaceId
-    text: SashaRoot.SashaManager.hello
+    text: SashaRoot.SashaManager.workspaceIdxs.join(" ")
     color: Root.ColorManager.netRed
     font.family: Root.FontManager.ntype82FontFamily
     font.pixelSize: Root.FontManager.fontNormal
