@@ -3,23 +3,26 @@ return {
     "nyoom-engineering/oxocarbon.nvim"
   },
   {
+    "noahfrederick/vim-hemisu",
+    lazy = false,
+    priority = 1000,
+    config = function ()
+    end
+  },
+  {
     "zaldih/themery.nvim",
     lazy = false,
     config = function()
       require("themery").setup({
         themes = {
           {
-            name = "crimson moonlight",
-            colorscheme = "crimson_moonlight"
-          },
-          {
             name = "oxocarbon",
             colorscheme = "oxocarbon"
           },
           {
-            name = "venom",
-            colorscheme = "venom"
-          }
+            name = "hemisu",
+            colorscheme = "hemisu"
+          },
         }
       })
     end
@@ -37,24 +40,4 @@ return {
       })
     end
   },
-  {
-    "metalelf0/black-metal-theme-neovim",
-    lazy = false,
-    priority = 1000,
-
-    config = function()
-      require("black-metal").setup({
-      })
-
-      require("black-metal").load()
-    end,
-  },
-  {
-    "rockerBOO/boo-colorscheme-nvim",
-    config = function()
-      require("boo-colorscheme").use{
-        italic = true
-      }
-    end
-  }
 }

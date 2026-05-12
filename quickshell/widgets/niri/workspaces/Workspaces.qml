@@ -20,12 +20,12 @@ Item {
             delegate: Rectangle {
                 required property int modelData
 
-                width: 24
-                height: 24
+                width: 30
+                height: 20
                 radius: 4
 
                 color: modelData === SashaRoot.SashaManager.focusedWorkspaceIdx
-                    ? Root.ColorManager.netRed
+                    ? Root.ColorManager.cyberGreen
                     : "#333333"
 
             }

@@ -33,7 +33,7 @@ Scope {
     ClockWidget.Clock {
       id: clockWidget
       anchors.centerIn: parent
-      anchors.horizontalCenterOffset: 35
+      anchors.horizontalCenterOffset: 30
     }
 
     BatteryWidget.Battery {
