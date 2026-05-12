@@ -9,6 +9,8 @@ QtObject {
   property color cyberGreen: "#afff4f"
   property color netRed: "#d19299"
 
+  property color burningRed: "#df3530"
+
   // ==========
   // TEXT COLORS
   // ==========
