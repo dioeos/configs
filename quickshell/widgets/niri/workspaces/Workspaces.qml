@@ -28,11 +28,6 @@ Item {
                     ? Root.ColorManager.netRed
                     : "#333333"
 
-                Text {
-                    anchors.centerIn: parent
-                    text: modelData
-                    color: "white"
-                }
             }
         }
     }
