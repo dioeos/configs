@@ -5,16 +5,35 @@ import ".." as SashaRoot
 import "../../.." as Root
 
 Item {
-  id: niriWorkspacesRoot
+    id: niriWorkspacesRoot
 
-  implicitWidth: focusedText.implicitWidth
-  implicitHeight: focusedText.implicitHeight
+    implicitWidth: row.implicitWidth
+    implicitHeight: row.implicitHeight
 
-  Text {
-    id: focusedText
-    text: SashaRoot.SashaManager.workspaceIdxs.join(" ")
-    color: Root.ColorManager.netRed
-    font.family: Root.FontManager.ntype82FontFamily
-    font.pixelSize: Root.FontManager.fontNormal
-  }
+    Row {
+        id: row
+        spacing: 8
+
+        Repeater {
+            model: SashaRoot.SashaManager.workspaceIdxs
+
+            delegate: Rectangle {
+                required property int modelData
+
+                width: 24
+                height: 24
+                radius: 4
+
+                color: modelData === SashaRoot.SashaManager.focusedWorkspaceIdx
+                    ? Root.ColorManager.netRed
+                    : "#333333"
+
+                Text {
+                    anchors.centerIn: parent
+                    text: modelData
+                    color: "white"
+                }
+            }
+        }
+    }
 }

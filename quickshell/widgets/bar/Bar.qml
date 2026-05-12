@@ -54,21 +54,21 @@ Scope {
       }
     }
 
-    NiriWindowWidget.Window {
-      id: niriWindowWidget
-      anchors {
-        left: parent.left
-        verticalCenter: parent.verticalCenter
-        leftMargin: 70
-      }
-    }
+    // NiriWindowWidget.Window {
+    //   id: niriWindowWidget
+    //   anchors {
+    //     left: parent.left
+    //     verticalCenter: parent.verticalCenter
+    //     leftMargin: 70
+    //   }
+    // }
 
     NiriWorkspacesWidget.Workspaces {
       id: niriWorkspacesWidget
       anchors {
         left: parent.left
         verticalCenter: parent.verticalCenter
-        leftMargin: 500
+        leftMargin: 70
       }
     }
 

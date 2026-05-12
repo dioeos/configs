@@ -11,7 +11,7 @@ QtObject {
 
   property string hello
   property string focusedTitle
-  property int focusedWorkspaceId: 1
+  property int focusedWorkspaceIdx: 1
   property var workspaceIdxs: []
 
   property Socket socket: Socket {
@@ -41,8 +41,8 @@ QtObject {
         }
 
         if (event.SashaWorkspaceActivated) {
-          sashaManagerRoot.focusedWorkspaceId =
-            event.SashaWorkspaceActivated.id ?? 1
+          sashaManagerRoot.focusedWorkspaceIdx =
+            event.SashaWorkspaceActivated.idx ?? 1
         }
 
         if (event.SashaWindowOpenedOrChanged) {
