@@ -36,5 +36,11 @@ function M.setup()
   vim.keymap.set("o", "r", flash.remote, { desc = "Remote Flash" })
   vim.keymap.set({ "o", "x" }, "R", flash.treesitter_search, { desc = "Treesitter Search" })
   vim.keymap.set("c", "<C-s>", flash.toggle, { desc = "Toggle Flash Search" })
+
+  -- ==========
+  -- OBSIDIAN
+  -- ==========
+  vim.keymap.set("n", "<leader>os", ":ObsidianSearch<CR>")
+  vim.keymap.set("n", "<leader>on", ":ObsidianNewFromTemplate<CR>")
 end
 return M

@@ -124,6 +124,7 @@ alias j="cd .."
 alias 2j="cd ..."
 alias 3j="cd ...."
 alias cd="z"
+alias vv="cd ~/vaults/Vault && nvim ."
 
 # ==========
 # STARTUP EDITS

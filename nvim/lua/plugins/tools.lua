@@ -142,4 +142,46 @@ return {
       },
     },
   },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "3.9.0",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "hrsh7th/nvim-cmp",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "Fedora Vault",
+          path = "~/vaults/Vault",
+        }
+      },
+      notes_subdir = "Raw",
+      templates = {
+        folder = "Templates"
+      },
+      picker = {
+        name = "telescope.nvim"
+      },
+      new_notes_location = "Raw",
+      disable_frontmatter = false,
+
+      note_id_func = function(title)
+        if title ~= nil then
+          return title
+            :lower()
+            :gsub("%s+", "-")
+            :gsub("[^%w%-]", "")
+            :gsub("%-+", "-")
+            :gsub("^%-", "")
+            :gsub("%-$", "")
+        end
+        return tostring(os.time())
+      end,
+    }
+  }
 }

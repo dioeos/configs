@@ -4,6 +4,7 @@
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 vim.opt.swapfile = false
+vim.opt.conceallevel = 1
 
 -- ========== --
 -- VISUALS & APPEARANCE
