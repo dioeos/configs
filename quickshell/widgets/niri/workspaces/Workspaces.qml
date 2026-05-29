@@ -28,9 +28,13 @@ Item {
                 height: 20
                 radius: 4
 
-                color: modelData.idx === SashaRoot.SashaManager.focusedWorkspaceIdx
-                    ? Root.ColorManager.cyberGreen
-                    : "#333333"
+                color: {
+                  if (modelData.idx === SashaRoot.SashaManager.focusedWorkspaceIdx && modelData.monitor === SashaRoot.SashaManager.focusedWorkspaceMonitor) {
+                    return Root.ColorManager.cyberGreen
+                  } else {
+                    return "#333333"
+                  }
+                }
 
             }
         }
