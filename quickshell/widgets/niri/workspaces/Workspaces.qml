@@ -22,13 +22,13 @@ Item {
             )
 
             delegate: Rectangle {
-                required property int modelData
+                required property var modelData
 
                 width: 30
                 height: 20
                 radius: 4
 
-                color: modelData === SashaRoot.SashaManager.focusedWorkspaceIdx
+                color: modelData.idx === SashaRoot.SashaManager.focusedWorkspaceIdx
                     ? Root.ColorManager.cyberGreen
                     : "#333333"
 
