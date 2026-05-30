@@ -280,6 +280,13 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
 // spawn-at-startup "quickshell"
+spawn-at-startup "fcitx5" "-d"
+environment {
+  QT_IM_MODULE "fcitx"
+  XMODIFIERS "@im=fcitx"
+  SDL_IM_MODULE "fcitx"
+  GLFW_IM_MODULE "ibus"
+}
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -398,7 +405,7 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Super+SLash {spawn-sh "cd /home/dio/dotfiles/scripts/system && ./toggle-ibus-lang.sh"; }
+    Super+Slash {spawn-sh "cd /home/dio/dotfiles/scripts/system && ./toggle-ibus-lang.sh"; }
     Super+C {spawn-sh "cd /home/dio/dotfiles/scripts/system && ./airpods-connect.sh"; }
     Super+R {spawn-sh "cd /home/dio/dotfiles/scripts/system && ./airpods-disconnect.sh"; }
 
