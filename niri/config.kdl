@@ -286,7 +286,7 @@ layout {
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -398,6 +398,7 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    Super+SLash {spawn-sh "cd /home/dio/dotfiles/scripts/system && ./toggle-ibus-lang.sh"; }
     Super+C {spawn-sh "cd /home/dio/dotfiles/scripts/system && ./airpods-connect.sh"; }
     Super+R {spawn-sh "cd /home/dio/dotfiles/scripts/system && ./airpods-disconnect.sh"; }
 
