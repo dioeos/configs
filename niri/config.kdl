@@ -78,6 +78,14 @@ layer-rule {
     place-within-backdrop true
 }
 
+layer-rule {
+  // match namespace="^my_quickshell_bar$"
+  match namespace="quickshell_bar"
+  background-effect {
+    blur true
+    xray false
+  }
+}
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".

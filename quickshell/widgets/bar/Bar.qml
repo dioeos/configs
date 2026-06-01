@@ -1,6 +1,7 @@
 import Quickshell
 import Quickshell.Io
 import QtQuick
+import Quickshell.Wayland
 
 import "../clock" as ClockWidget
 import "../battery" as BatteryWidget
@@ -15,6 +16,9 @@ Scope {
 
   PanelWindow {
     screen: barRoot.targetScreen
+    WlrLayershell.namespace: "quickshell_bar"
+    WlrLayershell.layer: WlrLayer.Top
+    color: "transparent"
 
     anchors {
       top: true
@@ -26,7 +30,7 @@ Scope {
     Rectangle {
       id: backgroundLayer
       anchors.fill: parent
-      color: "#191919"
+      color: "#66191919"
     }
 
     //bar content
