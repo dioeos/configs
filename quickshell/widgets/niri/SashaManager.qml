@@ -17,7 +17,7 @@ QtObject {
 
   property Socket socket: Socket {
     id: sashaSocket
-    path: "/run/user/1000/sasha.sock"
+    path: "/run/user/1000/sasha-events.sock"
     connected: true
 
     parser: SplitParser {
