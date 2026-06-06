@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Zen
+Comment=Zen Browser
+Exec=/home/dio/.local/share/zen/zen
+Icon=zen
+Type=Application
+Categories=WebBrowser;
