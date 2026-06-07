@@ -1,0 +1,20 @@
+@define-color panel #000000;
+@define-color border #000000;
+@define-color fg #e4e8ee;
+
+window.thunar toolbar entry {
+  opacity: 1;
+  background-color: @panel;
+  color: @fg;
+
+  border: 1px solid @border;
+  border-radius: 3px;
+
+  min-height: 20px;
+  min-width: 250px;
+
+  margin-left: 250px;
+  margin-right: 250px;
+
+  padding: 2px 12px;
+}

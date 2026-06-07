@@ -1,0 +1,74 @@
+window.thunar menubar {
+  opacity: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+
+window.thunar toolbar {
+  background-color: @bg;
+  border: none;
+  box-shadow: none;
+  padding-top: 38px;
+  padding-bottom: 55px;
+}
+
+window.thunar toolbar button,
+window.thunar toolbar toolbutton {
+  opacity: 0;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+separator {
+  background-color: transparent;
+  min-width: 0;
+  min-height: 0;
+}
+
+paned > separator {
+  background-color: transparent;
+  min-width: 0;
+  min-height: 0;
+}
+
+treeview.view {
+  -GtkTreeView-grid-line-width: 0;
+  -GtkTreeView-horizontal-separator: 0;
+  -GtkTreeView-vertical-separator: 0;
+}
+
+/* Remove borders from scroll areas */
+window.thunar scrolledwindow,
+window.thunar viewport {
+  border: none;
+  box-shadow: none;
+}
+
+/* Nuclear option if lines still appear */
+window.thunar * {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+window.thunar paned,
+window.thunar paned:backdrop {
+  border: none;
+  box-shadow: none;
+}
+
+window.thunar paned > separator,
+window.thunar paned > separator:backdrop {
+  background: transparent;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}

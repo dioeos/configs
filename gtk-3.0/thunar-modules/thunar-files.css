@@ -1,0 +1,11 @@
+@define-color fg #e4e8ee;
+@define-color bg #ff0000;
+
+window.thunar .view,
+window.thunar iconview,
+window.thunar treeview,
+window.thunar scrolledwindow,
+window.thunar viewport {
+  background-color: @bg;
+  color: @fg;
+}

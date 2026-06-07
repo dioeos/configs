@@ -1,0 +1,18 @@
+@define-color bg #191919;
+@define-color accent #afff4f;
+
+window.thunar .titlebar,
+window.thunar .titlebar:backdrop,
+window.thunar headerbar,
+window.thunar headerbar:backdrop,
+window.thunar headerbar.background,
+window.thunar headerbar.background:backdrop {
+  background-image: none;
+  background-color: @bg;
+  box-shadow: none;
+}
+
+window.thunar .title {
+  color: @accent;
+  font-size: 15px;
+}
