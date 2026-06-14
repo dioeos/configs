@@ -8,6 +8,7 @@ import "../battery" as BatteryWidget
 import "../network" as NetworkWidget
 import "../niri/window" as NiriWindowWidget
 import "../niri/workspaces" as NiriWorkspacesWidget
+import "../wallpaper" as WallpaperWidget
 
 
 Scope {
@@ -37,7 +38,7 @@ Scope {
     ClockWidget.Clock {
       id: clockWidget
       anchors.centerIn: parent
-      anchors.horizontalCenterOffset: 30
+      // anchors.horizontalCenterOffset: 30
     }
 
     BatteryWidget.Battery {
@@ -55,6 +56,15 @@ Scope {
         right: parent.right
         verticalCenter: parent.verticalCenter
         rightMargin: 70
+      }
+    }
+
+    WallpaperWidget.Wallpaper {
+      id: wallpaperWidget
+      anchors {
+        right: parent.right
+        verticalCenter: parent.verticalCenter
+        rightMargin: 300
       }
     }
 
