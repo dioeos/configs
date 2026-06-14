@@ -19,7 +19,7 @@ Item {
       id: clockText
       anchors.centerIn: parent
       text: clockRoot.time
-      color: Root.ColorManager.fgPrimary
+      color: Root.ColorManager.data.primary
       font.family: Root.FontManager.nothingFontFamily
       font.pixelSize: Root.FontManager.fontNormal
     }

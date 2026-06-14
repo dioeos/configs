@@ -51,7 +51,7 @@ Item {
     Text {
         id: networkText
         text: wifiName + " (" + wifiSignal + "%)"
-        color: wifiName === "No WiFi" ? Root.ColorManager.netRed : Root.ColorManager.fgPrimary
+        color: wifiName === "No WiFi" ? Root.ColorManager.data.primary : Root.ColorManager.data.secondary
         font.family: Root.FontManager.nothingFontFamily
         font.pixelSize: Root.FontManager.fontNormal
     }

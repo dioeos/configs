@@ -30,7 +30,7 @@ Item {
 
                 color: {
                   if (modelData.idx === SashaRoot.SashaManager.focusedWorkspaceIdx && modelData.monitor === SashaRoot.SashaManager.focusedWorkspaceMonitor) {
-                    return Root.ColorManager.cyberGreen
+                    return Root.ColorManager.data.primary
                   } else {
                     return "#333333"
                   }

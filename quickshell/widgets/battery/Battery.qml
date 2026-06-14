@@ -19,7 +19,7 @@ Item {
       text: Math.round(UPower.displayDevice.percentage * 100) + "%"
       color: UPower.displayDevice.energyRate < 0
         ? "white"
-        : Root.ColorManager.cyberGreen
+        : Root.ColorManager.data.primary
       font.family: Root.FontManager.nothingFontFamily
       font.pixelSize: Root.FontManager.fontNormal
     }
