@@ -7,5 +7,5 @@ Requisite=graphical-session.target
 WantedBy=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swaybg -m fill -i "%h/Downloads/black.jpg"
+ExecStart=/usr/bin/swaybg -m fill -i "%h/Downloads/green-eyes.png"
 Restart=on-failure
