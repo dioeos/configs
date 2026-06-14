@@ -9,16 +9,25 @@ PopupWindow {
   property bool shown: false
   visible: shown
 
-  // anchor.window: wallpaperRoot.QsWindow.window
-  width: 1200
-  height: 800
+  anchor.window: wallpaperRoot.QsWindow.window
+  width: anchor.window.screen.width
+  height: anchor.window.screen.height
+  color: "transparent"
 
-  anchor.rect.x: (anchor.window.screen.width - width) / 2
-  anchor.rect.y: (anchor.window.screen.height) * 0.15
+  MouseArea {
+    anchors.fill: parent
+    onClicked: popupWindow.shown = !popupWindow.shown
+  }
 
   Rectangle {
     id: content
-    anchors.fill: parent
+
+    width: parent.width * 0.8
+    height: parent.height * 0.15
+    z: 2
+    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.verticalCenter: parent.verticalCenter
+
     color: Root.ColorManager.data.primary
     border.width: 2
     border.color: "#afff4f"
