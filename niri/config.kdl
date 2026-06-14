@@ -79,6 +79,11 @@ layer-rule {
 }
 
 layer-rule {
+  match namespace="^awww-daemon$"
+  place-within-backdrop true
+}
+
+layer-rule {
   // match namespace="^my_quickshell_bar$"
   match namespace="quickshell_bar"
   background-effect {
@@ -86,6 +91,7 @@ layer-rule {
     xray false
   }
 }
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -355,6 +361,14 @@ window-rule {
   }
 }
 
+window-rule {
+  match app-id="librewolf"
+
+  background-effect {
+    blur true
+  }
+}
+
 // window-rule {
 //     match app-id="keepassxc"
 //     open-floating true
@@ -417,10 +431,15 @@ binds {
     Super+C {spawn-sh "cd /home/dio/dotfiles/scripts/system && ./airpods-connect.sh"; }
     Super+R {spawn-sh "cd /home/dio/dotfiles/scripts/system && ./airpods-disconnect.sh"; }
 
+    Super+Alt+C {spawn-sh "cd /home/dio/dotfiles/scripts/system && ./open-calendar.sh"; }
+
+    // Super+S { spawn "slack"; }
+
     // Suggested binds for running programs: terminal, app launcher, screen locker.
+    Super+Alt+B { spawn "librewolf"; }
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -678,4 +697,18 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+
+    // === SASHA CONFIG ===
+    // Super+M { spawn "cargo-sasha" "mark-window" "1"; }
+    // Super+M { spawn-sh "/home/dio/.cargo/bin/cargo-sasha mark-window 1 >> /tmp/sasha-bind.log 2>&1"; }
+    Super+Shift+1 { spawn "cargo-sasha" "mark-window" "1"; }
+    Super+Shift+2 { spawn "cargo-sasha" "mark-window" "2"; }
+    Super+Shift+3 { spawn "cargo-sasha" "mark-window" "3"; }
+    Super+Shift+4 { spawn "cargo-sasha" "mark-window" "4"; }
+    Super+Shift+5 { spawn "cargo-sasha" "mark-window" "5"; }
+    Super+Shift+6 { spawn "cargo-sasha" "mark-window" "6"; }
+    Super+Shift+7 { spawn "cargo-sasha" "mark-window" "7"; }
+    Super+Shift+8 { spawn "cargo-sasha" "mark-window" "8"; }
+    Super+Shift+9 { spawn "cargo-sasha" "mark-window" "9"; }
 }
