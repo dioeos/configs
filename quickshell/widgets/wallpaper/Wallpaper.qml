@@ -1,5 +1,6 @@
 import Quickshell
 import QtQuick
+import Quickshell.Io
 
 Item {
   id: wallpaperRoot
@@ -33,20 +34,52 @@ Item {
     Rectangle {
       id: popupContent
       anchors.fill: parent
-      color: "blue"
 
-      opacity: popup.shown ? 1 : 0
-      scale: popup.shown ? 1 : 0.95
+      Row {
+        anchors.fill: parent
+        spacing: 4
 
-      Behavior on opacity {
-        NumberAnimation { duration: 150 }
-      }
+        Rectangle {
+          width: parent.width / 2
+          height: parent.height
 
-      Behavior on scale {
-        NumberAnimation {
-          duration: 150
-          easing.type: Easing.OutCubic
+          MouseArea {
+            anchors.fill: parent
+            onClicked: {
+              Quickshell.execDetached({
+                command: ["awww", "img", "/home/dio/Downloads/black-abstract.png"]
+              })
+            }
+            Image {
+              source: "/home/dio/Downloads/black-abstract.png"
+              anchors.fill: parent
+              fillMode: Image.PreserveAspectCrop
+            }
+          }
         }
+
+        Rectangle {
+          width: parent.width / 2
+          height: parent.height
+
+          MouseArea {
+            anchors.fill: parent
+            onClicked: {
+              Quickshell.execDetached({
+                command: ["awww", "img", "/home/dio/Downloads/green-eyes.png"]
+              })
+            }
+
+            Image {
+              source: "/home/dio/Downloads/green-eyes.png"
+              anchors.fill: parent
+              fillMode: Image.PreserveAspectCrop
+            }
+          }
+
+
+        }
+
       }
     }
   }
