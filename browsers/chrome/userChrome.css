@@ -1,9 +1,0 @@
-@import "modules/tabs.css";
-#back-button,
-#forward-button,
-#reload-button,
-#stop-button,
-#home-button,
-#library-button {
-  display: none;
-}

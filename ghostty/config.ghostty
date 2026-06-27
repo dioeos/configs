@@ -1,3 +1,0 @@
-config-file = visuals.ghostty
-
-custom-shader = /home/dio/dotfiles/shaders/cursor_smear.glsl

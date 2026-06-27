@@ -1,5 +1,0 @@
-modmap:
-  - name: Global Remaps
-    remap:
-      CapsLock: Esc
-      Esc: CapsLock

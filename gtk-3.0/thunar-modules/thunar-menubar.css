@@ -1,5 +1,0 @@
-@define-color main_bg #000000;
-
-.menubar {
-  background: @main_bg;
-}
