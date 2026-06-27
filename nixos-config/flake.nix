@@ -3,14 +3,30 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
-  };
-  outputs = inputs@{ self, nixpkgs, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-     system = "x86_64-linux";
-     modules = [
-       ./configuration.nix
-       inputs.disko.nixosModules.disko
-     ];
+
+    home-manager = {
+      url = "github:nix-community/home-manager/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+  outputs = { self, nixpkgs, ... }@inputs: 
+    
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+       inherit system;
+
+       specialArgs = {
+         inherit inputs;
+       };
+
+       modules = [
+         ./hosts/merle/configuration.nix
+         inputs.disko.nixosModules.disko
+         inputs.home-manager.nixosModules.default
+       ];
+      };
+    };
 }

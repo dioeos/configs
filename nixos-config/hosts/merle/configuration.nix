@@ -2,14 +2,18 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./disko-config.nix
+      ../../modules/nixos/disko-config.nix
+      ../../modules/nixos/main-user.nix
+      inputs.home-manager.nixosModules.default
     ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
@@ -17,6 +21,16 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = true;
+
+  main-user.enable = true;
+  main-user.userName = "dio";
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "dio" = import ./home.nix;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     git
@@ -29,13 +43,13 @@
     ghostty
   ];
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v1.0.5-install-neovim";
+  system.nixos.label = "merle-v2.0.1-home-manager-and-format";
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "America/Denver";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -73,17 +87,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.dio = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
-     shell = pkgs.zsh;
-     packages = with pkgs; [
-       tree
-       zsh
-     ];
-   };
 
   # programs.firefox.enable = true;
   programs = {
