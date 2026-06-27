@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./disko-config.nix
+      ./main-user.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -17,6 +18,9 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = true;
+
+  main-user.enable = true;
+  main-user.userName = "dio";
 
   environment.systemPackages = with pkgs; [
     git
@@ -29,7 +33,7 @@
     ghostty
   ];
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.0.0";
+  system.nixos.label = "merle-v2.0.1-add-main-user-module";
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -73,17 +77,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.dio = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
-     shell = pkgs.zsh;
-     packages = with pkgs; [
-       tree
-       zsh
-     ];
-   };
 
   # programs.firefox.enable = true;
   programs = {
