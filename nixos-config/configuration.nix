@@ -29,13 +29,13 @@
     ghostty
   ];
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v1.0.5-install-neovim";
+  system.nixos.label = "merle-v1.0.6-change-time";
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "America/Denver";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
