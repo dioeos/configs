@@ -2,6 +2,8 @@ import Quickshell
 import QtQuick
 import Quickshell.Io
 
+import "../.." as Root
+
 Item {
   id: wallpaperRoot
   width: 20
@@ -9,7 +11,7 @@ Item {
 
   Rectangle {
     anchors.fill: parent
-    color: "red"
+    color: Root.ColorManager.data.primary
   }
 
   MouseArea {

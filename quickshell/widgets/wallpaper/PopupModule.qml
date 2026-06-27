@@ -18,9 +18,9 @@ PopupWindow {
   ListModel {
     id: wallpaperModel
 
-    ListElement { path: "/home/dio/Backgrounds/green.png" }
-    ListElement { path: "/home/dio/Backgrounds/green-eyes.png" }
-    ListElement { path: "/home/dio/Backgrounds/black-abstract.png" }
+    ListElement { path: "/home/dio/Backgrounds/black-wave.png" }
+    ListElement { path: "/home/dio/Backgrounds/ffr.png" }
+    ListElement { path: "/home/dio/Backgrounds/knight.png"}
   }
 
   MouseArea {
@@ -32,7 +32,7 @@ PopupWindow {
     id: panel
 
     width: parent.width * 0.8
-    height: parent.height * 0.15
+    height: parent.height * 0.3
     z: 2
 
     anchors.horizontalCenter: parent.horizontalCenter
@@ -42,7 +42,7 @@ PopupWindow {
       anchors.fill: parent
       color: "transparent"
       border.width: 2
-      border.color: "#afff4f"
+      border.color: Root.ColorManager.data.primary
     }
 
     MouseArea {
