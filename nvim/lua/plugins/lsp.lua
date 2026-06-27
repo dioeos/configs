@@ -70,6 +70,22 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
     },
     config = function()
+      vim.diagnostic.config {
+        virtual_text = {
+          spacing = 4,
+          source = 'if_many',
+          prefix = '●',
+        },
+        float = {
+          border = 'rounded',
+          source = 'if_many',
+        },
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = true,
+      }
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -92,7 +108,7 @@ return {
 
             local params = vim.lsp.util.make_position_params(0, client.offset_encoding or 'utf-16')
 
-            vim.lsp.buf_request(event.buf, 'textDocument/typeDefinition', params, function(err, result)
+            client:request('textDocument/typeDefinition', params, function(err, result)
               if err then
                 vim.notify('Type definition request failed', vim.log.levels.ERROR)
                 return
@@ -153,7 +169,14 @@ return {
                 border = 'rounded',
                 style = 'minimal',
               })
-            end)
+            end, event.buf)
+          end
+
+          local function format_buffer()
+            vim.lsp.buf.format {
+              bufnr = event.buf,
+              async = true,
+            }
           end
 
           -- Rename symbol under cursor.
@@ -162,29 +185,77 @@ return {
           -- Show available code actions.
           map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
 
-          -- Jump to declaration.
+          -- Jump/navigation.
           map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          map('grd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+          map('gri', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+          map('grr', vim.lsp.buf.references, '[G]oto [R]eferences')
+          map('grt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
 
-          -- Show hover popup, similar to VS Code hover.
+          -- Hover popup, similar to VS Code hover.
           map('K', function()
             vim.lsp.buf.hover {
               border = 'rounded',
             }
           end, 'Hover Documentation')
 
-          -- Jump to the type definition of the symbol under cursor.
-          map('grt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
-
-          -- Preview the type definition in a floating popup.
-          map('<leader>pt', preview_type_definition, '[P]review [T]ype Definition')
-
-          -- Show function/method parameter information.
+          -- Function/method parameter popup.
           map('<leader>k', function()
             vim.lsp.buf.signature_help {
               border = 'rounded',
             }
           end, 'Signature Help')
 
+          -- Preview type definition in a floating popup.
+          map('<leader>pt', preview_type_definition, '[P]review [T]ype Definition')
+
+          -- Symbols.
+          map('gO', vim.lsp.buf.document_symbol, '[G]oto Document Symb[O]ls')
+          map('<leader>ws', vim.lsp.buf.workspace_symbol, '[W]orkspace [S]ymbols')
+
+          -- Diagnostics.
+          map('<leader>e', function()
+            vim.diagnostic.open_float {
+              border = 'rounded',
+              source = 'if_many',
+            }
+          end, 'Open Diagnostic Float')
+
+          map('[d', function()
+            vim.diagnostic.jump {
+              count = -1,
+              float = true,
+            }
+          end, 'Previous Diagnostic')
+
+          map(']d', function()
+            vim.diagnostic.jump {
+              count = 1,
+              float = true,
+            }
+          end, 'Next Diagnostic')
+
+          -- map('<leader>q', vim.diagnostic.setloclist, 'Diagnostic Location List')
+
+          -- Formatting.
+          map('<leader>lf', format_buffer, '[L]SP [F]ormat')
+
+          -- CodeLens: useful for Rust run/debug/reference lenses.
+          --
+          -- Important:
+          -- Do NOT pass both `bufnr` and `client_id` here.
+          -- Neovim treats those as mutually exclusive.
+          if client and client:supports_method('textDocument/codeLens', event.buf) then
+            vim.lsp.codelens.enable(true, {
+              bufnr = event.buf,
+            })
+
+            map('grx', function()
+              vim.lsp.codelens.run()
+            end, '[G]oto CodeLens E[x]ecute')
+          end
+
+          -- Highlight symbol references under cursor.
           if client and client:supports_method('textDocument/documentHighlight', event.buf) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', {
               clear = false,
@@ -215,6 +286,7 @@ return {
             })
           end
 
+          -- Inlay hints.
           if client and client:supports_method('textDocument/inlayHint', event.buf) then
             vim.lsp.inlay_hint.enable(true, {
               bufnr = event.buf,
@@ -289,6 +361,200 @@ return {
 
               format = {
                 enable = false,
+              },
+            },
+          },
+        },
+
+        rust_analyzer = {
+          capabilities = capabilities,
+
+          settings = {
+            ['rust-analyzer'] = {
+              cargo = {
+                allTargets = true,
+                features = 'all',
+
+                buildScripts = {
+                  enable = true,
+                  rebuildOnSave = true,
+                },
+
+                targetDir = true,
+              },
+
+              procMacro = {
+                enable = true,
+
+                attributes = {
+                  enable = true,
+                },
+              },
+
+              checkOnSave = true,
+
+              check = {
+                command = 'clippy',
+                allTargets = true,
+                features = 'all',
+                extraArgs = {
+                  '--no-deps',
+                },
+              },
+
+              completion = {
+                autoimport = {
+                  enable = true,
+                },
+
+                autoself = {
+                  enable = true,
+                },
+
+                postfix = {
+                  enable = true,
+                },
+
+                callable = {
+                  snippets = 'fill_arguments',
+                },
+
+                fullFunctionSignatures = {
+                  enable = true,
+                },
+              },
+
+              imports = {
+                granularity = {
+                  group = 'module',
+                },
+
+                group = {
+                  enable = true,
+                },
+
+                prefix = 'crate',
+              },
+
+              inlayHints = {
+                bindingModeHints = {
+                  enable = true,
+                },
+
+                chainingHints = {
+                  enable = true,
+                },
+
+                closingBraceHints = {
+                  enable = true,
+                  minLines = 10,
+                },
+
+                closureCaptureHints = {
+                  enable = true,
+                },
+
+                closureReturnTypeHints = {
+                  enable = 'always',
+                },
+
+                discriminantHints = {
+                  enable = 'always',
+                },
+
+                expressionAdjustmentHints = {
+                  enable = 'reborrow',
+                  mode = 'prefix',
+                },
+
+                genericParameterHints = {
+                  const = {
+                    enable = true,
+                  },
+
+                  lifetime = {
+                    enable = true,
+                  },
+
+                  type = {
+                    enable = true,
+                  },
+                },
+
+                implicitDrops = {
+                  enable = true,
+                },
+
+                lifetimeElisionHints = {
+                  enable = 'skip_trivial',
+                  useParameterNames = true,
+                },
+
+                maxLength = 80,
+
+                parameterHints = {
+                  enable = true,
+                },
+
+                typeHints = {
+                  enable = true,
+                  hideClosureInitialization = false,
+                  hideClosureParameter = false,
+                  hideNamedConstructor = false,
+                },
+              },
+
+              hover = {
+                show = {
+                  fields = 25,
+                  traitAssocItems = 10,
+                },
+              },
+
+              lens = {
+                enable = true,
+
+                run = {
+                  enable = true,
+                },
+
+                debug = {
+                  enable = true,
+                },
+
+                implementations = {
+                  enable = true,
+                },
+
+                references = {
+                  adt = {
+                    enable = true,
+                  },
+
+                  enumVariant = {
+                    enable = true,
+                  },
+
+                  method = {
+                    enable = true,
+                  },
+
+                  trait = {
+                    enable = true,
+                  },
+                },
+              },
+
+              signatureInfo = {
+                detail = 'full',
+
+                documentation = {
+                  enable = true,
+                },
+              },
+
+              diagnostics = {
+                enable = true,
               },
             },
           },
