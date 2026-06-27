@@ -5,7 +5,7 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -23,7 +23,7 @@
        };
 
        modules = [
-         ./configuration.nix
+         ./hosts/merle/configuration.nix
          inputs.disko.nixosModules.disko
          inputs.home-manager.nixosModules.default
        ];

@@ -8,8 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./disko-config.nix
-      ./main-user.nix
+      ../../modules/nixos/disko-config.nix
+      ../../modules/nixos/main-user.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -43,7 +43,7 @@
     ghostty
   ];
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.0.1-add-main-user-module";
+  system.nixos.label = "merle-v2.0.1-home-manager-and-format";
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
