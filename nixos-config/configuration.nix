@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -10,7 +10,10 @@
       ./hardware-configuration.nix
       ./disko-config.nix
       ./main-user.nix
+      inputs.home-manager.nixosModules.default
     ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
@@ -21,6 +24,13 @@
 
   main-user.enable = true;
   main-user.userName = "dio";
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "dio" = import ./home.nix;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     git
