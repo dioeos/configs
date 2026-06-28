@@ -15,7 +15,7 @@
     ];
 
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.1.8-working-nixcat-nvim";
+  system.nixos.label = "merle-v2.2.0-quickshell-niri-nix-spotify";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
@@ -46,6 +46,8 @@
     ghostty
     discord
     lazygit
+    spotify
+    quickshell
   ];
 
   fonts.packages = with pkgs; [
