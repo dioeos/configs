@@ -44,8 +44,19 @@ in
             tools = with pkgs.vimPlugins; [
               themery-nvim
               oil-nvim
+              flash-nvim
+              telescope-nvim
+              plenary-nvim
             ];
           };
+
+          lspsAndRuntimeDeps = {
+            tools = with pkgs; [
+              ripgrep
+              fd
+            ];
+          };
+
         };
 
       packageDefinitions.replace = {
