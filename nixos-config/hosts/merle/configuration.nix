@@ -47,6 +47,7 @@
     discord
     lazygit
     spotify
+    quickshell
   ];
 
   fonts.packages = with pkgs; [
