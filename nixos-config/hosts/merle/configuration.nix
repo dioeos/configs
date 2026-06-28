@@ -15,7 +15,7 @@
     ];
 
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.0.5-ghostty-visuals";
+  system.nixos.label = "merle-v2.0.7-lazygit";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
@@ -46,6 +46,7 @@
     pavucontrol
     ghostty
     discord
+    lazygit
   ];
 
   # Configure network connections interactively with nmcli or nmtui.
