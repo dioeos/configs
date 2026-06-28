@@ -34,6 +34,16 @@ in
               customColorschemes.vesper
               customColorschemes.nvimgelion
             ];
+
+            lazy = with pkgs.vimPlugins; [
+              lze
+            ];
+          };
+
+          optionalPlugins = {
+            tools = with pkgs.vimPlugins; [
+              themery-nvim
+            ];
           };
         };
 
@@ -45,6 +55,8 @@ in
 
           categories = {
             colorschemes = true;
+            lazy = true;
+            tools = true;
           };
         };
       };
