@@ -15,7 +15,7 @@
     ];
 
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.0.8-nixcats-nvim";
+  system.nixos.label = "merle-v2.1.8-working-nixcat-nvim";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
