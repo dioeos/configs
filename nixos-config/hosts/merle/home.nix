@@ -12,6 +12,7 @@
 
     # === BROWSERS ===
     ../../modules/home-manager/firefox/firefox-config.nix
+    ../../modules/home-manager/zen-browser/zen-browser-config.nix
 
     # === TOOLS ===
     ../../modules/home-manager/niri/niri-config.nix
@@ -23,6 +24,7 @@
     ../../modules/home-manager/quickshell/quickshell-config.nix
     ../../modules/home-manager/spotify/spotify-config.nix
     ../../modules/home-manager/discord/discord-config.nix
+    ../../modules/home-manager/awww/awww-config.nix
   ];
 
   home.username = "dio";

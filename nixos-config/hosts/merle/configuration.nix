@@ -19,7 +19,7 @@
     ];
 
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.3.3-quickshell-start";
+  system.nixos.label = "merle-v2.4.0-awww";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
