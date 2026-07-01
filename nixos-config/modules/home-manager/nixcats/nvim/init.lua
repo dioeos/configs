@@ -6,3 +6,6 @@ require("config.plugins.oil")
 require("config.plugins.telescope")
 require("config.plugins.flash")
 require("config.plugins.obsidian")
+
+require("config.lsp.attach-lsp")
+require("config.lsp.lua-lsp")

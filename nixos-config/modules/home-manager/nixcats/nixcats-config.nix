@@ -41,6 +41,10 @@ in
             lazy = with pkgs.vimPlugins; [
               lze
             ];
+
+            lspConfig = with pkgs.vimPlugins; [
+              nvim-lspconfig
+            ];
           };
 
           optionalPlugins = {
@@ -57,6 +61,7 @@ in
 
           lspsAndRuntimeDeps = {
             tools = with pkgs; [
+              lua-language-server
               ripgrep
               fd
             ];
@@ -73,6 +78,7 @@ in
           categories = {
             colorschemes = true;
             lazy = true;
+            lspConfig = true;
             tools = true;
             notes = true;
           };
