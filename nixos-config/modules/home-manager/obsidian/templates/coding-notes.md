@@ -1,7 +1,8 @@
 ---
 id: "{{title}}"
 aliases: []
-tags: []
+tags:
+- CodingNote
 ---
 
 # {{title}}
