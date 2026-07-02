@@ -62,6 +62,10 @@ in
           lspsAndRuntimeDeps = {
             tools = with pkgs; [
               lua-language-server
+
+              typescript
+              typescript-language-server
+
               ripgrep
               fd
             ];

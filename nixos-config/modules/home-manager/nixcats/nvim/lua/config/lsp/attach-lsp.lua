@@ -15,6 +15,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
       })
     end
 
-    map("n", "K", vim.lsp.buf.hover, "LSP hover")
+    map("n", "<leader>hh", vim.lsp.buf.hover, "LSP hover")
+    map("n", "<leader>e", vim.diagnostic.open_float, "Show diagnostic")
+
+    if client:supports_method("textDocument/formatting") then
+      map("n", "<leader>fd", function()
+        print("Formatting with " .. client.name)
+
+        vim.lsp.buf.format({
+          bufnr = bufnr,
+        })
+      end, "Format buffer")
+    end
   end
 })
