@@ -30,9 +30,10 @@ in
           startupPlugins = {
             colorschemes = with pkgs.vimPlugins; [
               kanagawa-nvim
-            ] ++ [
+              harpoon
               telescope-nvim
               plenary-nvim
+            ] ++ [
               customColorschemes.vesper
               customColorschemes.nvimgelion
               customColorschemes.ashen
