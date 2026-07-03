@@ -4,6 +4,8 @@ pkgs.mkShell {
   packages = with pkgs; [ 
     tig
     lua-language-server
+    nixd
+    nixfmt
   ];
 
   shellHook = ''
