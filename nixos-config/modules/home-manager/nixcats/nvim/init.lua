@@ -13,4 +13,5 @@ require("config.lsp.diagnostics")
 -- === LSP SERVERS === --
 require("config.lsp.lua-lsp")
 require("config.lsp.typescript-lsp")
+require("config.lsp.nix-lsp")
 -- require("config.lsp.ruby-lsp")

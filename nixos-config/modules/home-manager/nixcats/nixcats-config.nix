@@ -61,11 +61,8 @@ in
 
           lspsAndRuntimeDeps = {
             tools = with pkgs; [
+              # === Installed per project w/ nix develop === #
               lua-language-server
-
-              typescript
-              typescript-language-server
-
               ripgrep
               fd
             ];
