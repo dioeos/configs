@@ -1,3 +1,5 @@
+local capabilities = require("blink.cmp").get_lsp_capabilities()
+
 vim.lsp.config("lua_ls", {
   cmd = { "lua-language-server" },
 
@@ -8,6 +10,8 @@ vim.lsp.config("lua_ls", {
     ".luarc.jsonc",
     ".git",
   },
+
+  capabilities = capabilities,
 
   settings = {
     Lua = {

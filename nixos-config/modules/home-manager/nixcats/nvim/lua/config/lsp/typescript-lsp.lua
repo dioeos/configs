@@ -1,3 +1,5 @@
+local capabilities = require("blink.cmp").get_lsp_capabilities()
+
 vim.lsp.config("ts_ls", {
   cmd = { "typescript-language-server", "--stdio" },
 
@@ -11,7 +13,8 @@ vim.lsp.config("ts_ls", {
     "tsconfig.json",
     "jsconfig.json",
     ".git",
-  }
+  },
+  capabilities = capabilities
 })
 
 vim.lsp.enable("ts_ls")
