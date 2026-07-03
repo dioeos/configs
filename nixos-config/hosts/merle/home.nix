@@ -23,7 +23,6 @@
     ../../modules/home-manager/gnumake/gnumake-config.nix
     ../../modules/home-manager/nodejs/nodejs-config.nix
     ../../modules/home-manager/meld/meld-config.nix
-    # ../../modules/home-manager/tig/tig-config.nix
     ../../modules/home-manager/vicinae/vicinae-config.nix
     ../../modules/home-manager/direnv/direnv-config.nix
 

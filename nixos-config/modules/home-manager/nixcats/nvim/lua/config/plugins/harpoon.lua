@@ -15,11 +15,11 @@ vim.keymap.set("n", "<leader>h", function()
   require("harpoon.ui").toggle_quick_menu()
 end, { desc = "Toggle quick harpoon menu" })
 
-vim.keymap.set("n", "nm", function()
+vim.keymap.set("n", "m.", function()
   require("harpoon.ui").nav_next()
 end, { desc = "Navigate to next mark" })
 
-vim.keymap.set("n", "pm", function()
+vim.keymap.set("n", "m,", function()
   require("harpoon.ui").nav_prev()
 end, { desc = "Navigate to previous mark" })
 
