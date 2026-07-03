@@ -24,7 +24,7 @@
   virtualisation.docker.enable = true;
 
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.5.0-obsidian";
+  system.nixos.label = "merle-v2.5.0-developer-tools";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
