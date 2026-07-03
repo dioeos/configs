@@ -5,6 +5,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.conceallevel = 2
+vim.opt.showtabline = 2
 
 vim.opt.termguicolors =true
-vim.cmd.colorscheme("ashen")
+vim.cmd.colorscheme("vesper")

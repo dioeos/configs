@@ -28,11 +28,21 @@ in
         in
         {
           startupPlugins = {
+            completion = with pkgs.vimPlugins; [
+              blink-cmp
+              luasnip
+              friendly-snippets
+            ];
+
+            navigation = with pkgs.vimPlugins; [
+              telescope-nvim
+              plenary-nvim
+              harpoon
+            ];
+
             colorschemes = with pkgs.vimPlugins; [
               kanagawa-nvim
             ] ++ [
-              telescope-nvim
-              plenary-nvim
               customColorschemes.vesper
               customColorschemes.nvimgelion
               customColorschemes.ashen
@@ -62,7 +72,6 @@ in
           lspsAndRuntimeDeps = {
             tools = with pkgs; [
               # === Installed per project w/ nix develop === #
-              lua-language-server
               ripgrep
               fd
             ];
@@ -77,6 +86,8 @@ in
           };
 
           categories = {
+            completion = true;
+            navigation = true;
             colorschemes = true;
             lazy = true;
             lspConfig = true;

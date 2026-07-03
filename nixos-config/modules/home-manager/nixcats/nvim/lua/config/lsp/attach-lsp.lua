@@ -17,6 +17,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     map("n", "<leader>hh", vim.lsp.buf.hover, "LSP hover")
     map("n", "<leader>e", vim.diagnostic.open_float, "Show diagnostic")
+    map("n", "<leader>da", "<cmd>Telescope diagnostics<CR>", "Show all file diagnostics")
+    map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
+    map("n", "gd", vim.lsp.buf.definition, "Go to definition")
+    map("n", "<leader>D", vim.lsp.buf.type_definition, "Go to type definition")
 
     if client:supports_method("textDocument/formatting") then
       map("n", "<leader>fd", function()
