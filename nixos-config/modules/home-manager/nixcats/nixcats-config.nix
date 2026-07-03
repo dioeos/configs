@@ -31,6 +31,8 @@ in
             colorschemes = with pkgs.vimPlugins; [
               kanagawa-nvim
             ] ++ [
+              telescope-nvim
+              plenary-nvim
               customColorschemes.vesper
               customColorschemes.nvimgelion
               customColorschemes.ashen
@@ -39,6 +41,10 @@ in
             lazy = with pkgs.vimPlugins; [
               lze
             ];
+
+            lspConfig = with pkgs.vimPlugins; [
+              nvim-lspconfig
+            ];
           };
 
           optionalPlugins = {
@@ -46,13 +52,17 @@ in
               themery-nvim
               oil-nvim
               flash-nvim
-              telescope-nvim
-              plenary-nvim
+            ];
+
+            notes = with pkgs.vimPlugins; [
+              obsidian-nvim
             ];
           };
 
           lspsAndRuntimeDeps = {
             tools = with pkgs; [
+              # === Installed per project w/ nix develop === #
+              lua-language-server
               ripgrep
               fd
             ];
@@ -69,7 +79,9 @@ in
           categories = {
             colorschemes = true;
             lazy = true;
+            lspConfig = true;
             tools = true;
+            notes = true;
           };
         };
       };

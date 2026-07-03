@@ -18,8 +18,13 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
+  virtualisation.docker.enable = true;
+
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.4.0-awww";
+  system.nixos.label = "merle-v2.5.0-developer-tools";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
@@ -46,7 +51,9 @@
   environment.systemPackages = with pkgs; [
     git
     xwayland-satellite
-    fuzzel
+    udiskie
+    ntfs3g
+    exfatprogs
   ];
 
   fonts.packages = with pkgs; [

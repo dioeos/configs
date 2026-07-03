@@ -1,5 +1,4 @@
 { config, pkgs, inputs, ... }:
-
 {
   imports = [
     # === TERMINAL ===
@@ -20,12 +19,21 @@
     ../../modules/home-manager/pavucontrol/pavucontrol-config.nix
     ../../modules/home-manager/lazygit/lazygit-config.nix
     ../../modules/home-manager/zoxide/zoxide-config.nix
+    ../../modules/home-manager/nautilus/nautilus-config.nix
+    ../../modules/home-manager/gnumake/gnumake-config.nix
+    ../../modules/home-manager/nodejs/nodejs-config.nix
+    ../../modules/home-manager/meld/meld-config.nix
+    # ../../modules/home-manager/tig/tig-config.nix
+    ../../modules/home-manager/vicinae/vicinae-config.nix
+    ../../modules/home-manager/direnv/direnv-config.nix
 
     # === EXTRAS ===
     ../../modules/home-manager/quickshell/quickshell-config.nix
     ../../modules/home-manager/spotify/spotify-config.nix
     ../../modules/home-manager/discord/discord-config.nix
     ../../modules/home-manager/awww/awww-config.nix
+    ../../modules/home-manager/obsidian/obsidian-config.nix
+    ../../modules/home-manager/slack/slack-config.nix
   ];
 
   home.username = "dio";
