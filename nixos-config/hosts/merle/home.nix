@@ -25,6 +25,7 @@
     ../../modules/home-manager/meld/meld-config.nix
     ../../modules/home-manager/vicinae/vicinae-config.nix
     ../../modules/home-manager/direnv/direnv-config.nix
+    ../../modules/home-manager/jujutsu/jujutsu-config.nix
 
     # === EXTRAS ===
     ../../modules/home-manager/quickshell/quickshell-config.nix
@@ -33,6 +34,9 @@
     ../../modules/home-manager/awww/awww-config.nix
     ../../modules/home-manager/obsidian/obsidian-config.nix
     ../../modules/home-manager/slack/slack-config.nix
+    ../../modules/home-manager/anki/anki-config.nix
+
+    # ../../modules/home-manager/prismlauncher/prismlauncher-config.nix
   ];
 
   home.username = "dio";
