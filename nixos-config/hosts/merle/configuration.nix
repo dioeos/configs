@@ -34,7 +34,7 @@
     127.0.0.1 wcs.test bronxzoo.test centralparkzoo.test queenszoo.test prospectparkzoo.test nyaquarium.test blueyork.test wcsmembers.test
     ::1 wcs.test bronxzoo.test centralparkzoo.test queenszoo.test prospectparkzoo.test nyaquarium.test blueyork.test wcsmembers.test
   '';
-  system.nixos.label = "merle-v2.6.1-awww-fix";
+  system.nixos.label = "merle-v3.0.0";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
