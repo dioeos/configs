@@ -3,6 +3,6 @@ import QtQuick
 
 QtObject {
   readonly property var colors: ({
-    primary: "#08deea"
+    primary: "#A2A970"
   })
 }
