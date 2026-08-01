@@ -4,6 +4,7 @@ import QtQuick
 import Quickshell.Wayland
 
 import "../clock" as ClockModule
+import "../battery" as BatteryModule
 
 Scope {
   id: barRoot
@@ -62,8 +63,9 @@ Scope {
 
         Rectangle {
           id: clockWrapper
-          color: "#0000ff"
-          radius: 12
+          color: "transparent"
+          // color: "#0000ff"
+          // radius: 12
 
           implicitWidth: clockModule.implicitWidth + 8
           implicitHeight: clockModule.implicitHeight + 16
@@ -101,23 +103,21 @@ Scope {
         anchors.rightMargin: 12
         spacing: 8
 
-        // Repeater {
-        //   model: ["1", "2", "3", "4", "5"]
-        //
-        //   delegate: Rectangle {
-        //     radius: 6
-        //     color: "#ff0000"
-        //
-        //     implicitWidth: workspaceText.implicitWidth + 12
-        //     implicitHeight: workspaceText.implicitHeight + 6
-        //
-        //     Text {
-        //       id: workspaceText
-        //       anchors.centerIn: parent
-        //       text: modelData
-        //       color: "white"
-        //     }
-        //   }
+        Rectangle {
+          id: batteryWrapper
+          color: "transparent"
+          // radius: 12
+
+          implicitWidth: batteryModule.implicitWidth + 30
+          implicitHeight: batteryModule.implicitHeight + 16
+
+          BatteryModule.Battery {
+            id: batteryModule
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.left: parent.left
+            anchors.leftMargin: 6
+          }
+        }
       }
     }
   }
