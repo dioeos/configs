@@ -54,4 +54,31 @@
       cp $styles $out/styles.css
     '';
   };
+
+  obsidian-to-anki = pkgs.stdenv.mkDerivation {
+    pname = "obsidian-to-anki";
+    version = "3.6.0";
+
+    dontUnpack = true;
+
+    manifest = pkgs.fetchurl {
+      url = "https://github.com/ObsidianToAnki/Obsidian_to_Anki/releases/download/3.6.0/manifest.json";
+      hash = "sha256-SzzKQjJmqKyIKTVAXvCDRS/tVJmzOBGohke1NkWX+z4=";
+    };
+    main = pkgs.fetchurl {
+      url = "https://github.com/ObsidianToAnki/Obsidian_to_Anki/releases/download/3.6.0/main.js";
+      hash = "sha256-3MpVnIABoEH/EaXe9Mb5CWlpUUJJ0ZONt47Gp+5Vv+8=";
+    };
+    styles = pkgs.fetchurl {
+      url = "https://github.com/ObsidianToAnki/Obsidian_to_Anki/releases/download/3.6.0/styles.css";
+      hash = "sha256-iv3uGArAQeYdLA0FPhyVOqR22VxjKiu+Yz6lfD7/LBM=";
+    };
+
+    installPhase = ''
+      mkdir -p $out
+      cp $manifest $out/manifest.json
+      cp $main $out/main.js
+      cp $styles $out/styles.css
+    '';
+  };
 }

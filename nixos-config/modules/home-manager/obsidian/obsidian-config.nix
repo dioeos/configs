@@ -73,6 +73,7 @@ in
           communityPlugins = [
             plugins.fast-note-sync
             plugins.omnisearch
+            plugins.obsidian-to-anki
           ];
 
         };

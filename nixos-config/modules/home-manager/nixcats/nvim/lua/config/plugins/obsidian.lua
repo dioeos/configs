@@ -11,7 +11,9 @@ require("lze").load({
         function()
           local templates = {
             "coding-notes",
-            "documentation"
+            "documentation",
+            "leetcode",
+            "personal"
           }
 
           vim.ui.select(templates, {

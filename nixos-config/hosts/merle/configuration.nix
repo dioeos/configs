@@ -8,6 +8,7 @@
   imports =
     [ 
       ./hardware-configuration.nix
+
       ../../modules/nixos/disko-config.nix
       ../../modules/nixos/main-user.nix
       ../../modules/nixos/xremap-config.nix
@@ -15,6 +16,11 @@
       ../../modules/nixos/zsh-config.nix
       ../../modules/nixos/niri-config.nix
       ../../modules/nixos/uwsm-config.nix
+      ../../modules/nixos/upower-config.nix
+      ../../modules/nixos/postgresql-config.nix
+      ../../modules/nixos/nixld-config.nix
+
+      ../../../packaged-fonts/fonts-config.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -24,7 +30,11 @@
   virtualisation.docker.enable = true;
 
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.6.1-awww-fix";
+  networking.extraHosts = ''
+    127.0.0.1 wcs.test bronxzoo.test centralparkzoo.test queenszoo.test prospectparkzoo.test nyaquarium.test blueyork.test wcsmembers.test
+    ::1 wcs.test bronxzoo.test centralparkzoo.test queenszoo.test prospectparkzoo.test nyaquarium.test blueyork.test wcsmembers.test
+  '';
+  system.nixos.label = "merle-v3.0.0";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
@@ -54,10 +64,9 @@
     udiskie
     ntfs3g
     exfatprogs
-  ];
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.iosevka
+    pciutils
+    mesa-demos
+    vulkan-tools
   ];
 
   # Configure network connections interactively with nmcli or nmtui.
@@ -103,6 +112,24 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are

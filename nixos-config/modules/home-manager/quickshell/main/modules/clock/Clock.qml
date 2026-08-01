@@ -2,6 +2,8 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
+import "../.." as Root
+
 Item {
   id: clockRoot
 
@@ -16,7 +18,9 @@ Item {
       id: clockText
       anchors.centerIn: parent
       text: clockRoot.time
-      color: "#ff0000"
+      font.pixelSize: Root.FontManager.fontNormal
+      font.family: Root.FontManager.ndot57FontFamily
+      color: Root.ColorManager.colors.primary
     }
   }
 
