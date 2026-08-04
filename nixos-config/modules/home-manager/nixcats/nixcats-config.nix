@@ -25,6 +25,10 @@ in
           customColorschemes = import ./colorschemes.nix {
             inherit pkgs;
           };
+
+          customUtilities = import ./utilities.nix {
+            inherit pkgs;
+          };
         in
         {
           startupPlugins = {
@@ -46,6 +50,10 @@ in
               customColorschemes.vesper
               customColorschemes.nvimgelion
               customColorschemes.ashen
+            ];
+
+            utilities = [
+              customUtilities.xeno
             ];
 
             lazy = with pkgs.vimPlugins; [
@@ -89,6 +97,7 @@ in
             completion = true;
             navigation = true;
             colorschemes = true;
+            utilities = true;
             lazy = true;
             lspConfig = true;
             tools = true;

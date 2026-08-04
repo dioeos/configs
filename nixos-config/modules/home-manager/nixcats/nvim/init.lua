@@ -8,6 +8,7 @@ require("config.plugins.flash")
 require("config.plugins.obsidian")
 require("config.plugins.harpoon")
 require("config.plugins.completion")
+require("config.plugins.xeno")
 
 require("config.lsp.attach-lsp")
 require("config.lsp.diagnostics")
