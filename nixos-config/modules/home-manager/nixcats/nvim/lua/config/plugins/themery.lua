@@ -17,6 +17,10 @@ require("lze").load({
             colorscheme = "kanagawa"
           },
           {
+            name = "merle",
+            colorscheme = "merle"
+          },
+          {
             name = "ashen",
             colorscheme = "ashen"
           },

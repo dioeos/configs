@@ -1,6 +1,7 @@
 require("config.options")
 require("config.keymaps")
 
+require("config.plugins.xeno")
 require("config.plugins.themery")
 require("config.plugins.oil")
 require("config.plugins.telescope")
@@ -8,7 +9,6 @@ require("config.plugins.flash")
 require("config.plugins.obsidian")
 require("config.plugins.harpoon")
 require("config.plugins.completion")
-require("config.plugins.xeno")
 
 require("config.lsp.attach-lsp")
 require("config.lsp.diagnostics")
