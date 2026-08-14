@@ -35,6 +35,7 @@
     ../../modules/home-manager/obsidian/obsidian-config.nix
     ../../modules/home-manager/slack/slack-config.nix
     ../../modules/home-manager/anki/anki-config.nix
+    ../../modules/home-manager/brightnessctl/brightnessctl-config.nix
 
    # === PERSONAL DEV ===
    ../../modules/home-manager/niqol/niqol-config.nix
