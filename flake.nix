@@ -2,7 +2,7 @@
   description = "Nix shell environment flake for dotfiles developmment";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=26.05";
   };
 
   outputs = { self, nixpkgs }:

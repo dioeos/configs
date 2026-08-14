@@ -36,6 +36,9 @@
     ../../modules/home-manager/slack/slack-config.nix
     ../../modules/home-manager/anki/anki-config.nix
 
+   # === PERSONAL DEV ===
+   ../../modules/home-manager/niqol/niqol-config.nix
+
     # ../../modules/home-manager/prismlauncher/prismlauncher-config.nix
   ];
 
