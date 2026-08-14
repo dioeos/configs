@@ -29,11 +29,9 @@
 
   virtualisation.docker.enable = true;
 
+  networking.firewall.allowedTCPPorts = [ 5173 ];
+
   networking.hostName = "merle"; # Define your hostname.
-  networking.extraHosts = ''
-    127.0.0.1 wcs.test bronxzoo.test centralparkzoo.test queenszoo.test prospectparkzoo.test nyaquarium.test blueyork.test wcsmembers.test
-    ::1 wcs.test bronxzoo.test centralparkzoo.test queenszoo.test prospectparkzoo.test nyaquarium.test blueyork.test wcsmembers.test
-  '';
   system.nixos.label = "merle-v3.0.0";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
@@ -73,7 +71,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/Denver";
+  time.timeZone = "America/New_York";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -89,9 +87,6 @@
 
   # Enable the X11 windowing system.
   #services.xserver.enable = true;
-
-
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";

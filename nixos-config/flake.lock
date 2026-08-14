@@ -74,6 +74,26 @@
         "type": "github"
       }
     },
+    "niqol": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786682650,
+        "narHash": "sha256-tYcRgCicbZDbmS6DF+jkcRO4XnSh9V25uqVw70KZ4Ew=",
+        "owner": "dioeos",
+        "repo": "niqol",
+        "rev": "8e7ce077302d4cb58794cd55d1a5d673a0065ad4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dioeos",
+        "repo": "niqol",
+        "type": "github"
+      }
+    },
     "nixCats": {
       "locked": {
         "lastModified": 1777273601,
@@ -140,6 +160,7 @@
       "inputs": {
         "disko": "disko",
         "home-manager": "home-manager",
+        "niqol": "niqol",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
         "xremap": "xremap",
