@@ -19,6 +19,7 @@
       ../../modules/nixos/upower-config.nix
       ../../modules/nixos/postgresql-config.nix
       ../../modules/nixos/nixld-config.nix
+      ../../modules/nixos/tailscale-config.nix
 
       ../../../packaged-fonts/fonts-config.nix
       inputs.home-manager.nixosModules.default
