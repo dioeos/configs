@@ -81,4 +81,31 @@
       cp $styles $out/styles.css
     '';
   };
+
+  obsidian-ink = pkgs.stdenv.mkDerivation {
+    pname = "obsidian-ink";
+    version = "0.5.6";
+
+    dontUnpack = true;
+
+    manifest = pkgs.fetchurl {
+      url = "https://github.com/daledesilva/obsidian_ink/releases/download/0.5.6/manifest.json";
+      hash = "sha256:8eea071404969630525f824833139dc3f9783899df610238998668e26efc9f7f";
+    };
+    main = pkgs.fetchurl {
+      url = "https://github.com/daledesilva/obsidian_ink/releases/download/0.5.6/main.js";
+      hash = "sha256:3d525dbe1973224b04dc4f054d84bf5eb13fdaebebbbe8d6124af12e181180ad";
+    };
+    styles = pkgs.fetchurl {
+      url = "https://github.com/daledesilva/obsidian_ink/releases/download/0.5.6/styles.css";
+      hash = "sha256:e263b99963bee0201f8476e8532e14e410c9ae29319c55e4f10b400b3481272d";
+    };
+
+    installPhase = ''
+      mkdir -p $out
+      cp $manifest $out/manifest.json
+      cp $main $out/main.js
+      cp $styles $out/styles.css
+    '';
+  };
 }
