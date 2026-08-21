@@ -44,6 +44,8 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = true;
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   main-user.enable = true;
   main-user.userName = "dio";
 
