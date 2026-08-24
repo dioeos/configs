@@ -38,11 +38,10 @@
     ../../modules/home-manager/brightnessctl/brightnessctl-config.nix
     ../../modules/home-manager/tidal/tidal-config.nix
     ../../modules/home-manager/bitwarden/bitwarden-config.nix
+    ../../modules/home-manager/prismlauncher/prismlauncher-config.nix
 
    # === PERSONAL DEV ===
    ../../modules/home-manager/niqol/niqol-config.nix
-
-    # ../../modules/home-manager/prismlauncher/prismlauncher-config.nix
   ];
 
   home.username = "dio";
