@@ -74,6 +74,27 @@
         "type": "github"
       }
     },
+    "home-manager_2": {
+      "inputs": {
+        "nixpkgs": [
+          "pi-flake",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783436070,
+        "narHash": "sha256-F80z1JoiJgZyTT5D+3siLOVzqmCEphLR7t0Ym/I2CLI=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "f09af49406ffad37acb6538d3207189a1a1e0b7e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "niqol": {
       "inputs": {
         "nixpkgs": [
@@ -81,11 +102,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786723346,
-        "narHash": "sha256-NHbk1yDMhJnK9XCvxrFcLQBd0zEMpuQJ9ToIpfevTts=",
+        "lastModified": 1787770731,
+        "narHash": "sha256-yZMF2GDljoR57My99F8LXjQMFEeLZwPu1sdWow5PyPM=",
         "owner": "dioeos",
         "repo": "niqol",
-        "rev": "57db2d80829eb2a5bbf4bfe16dab806316116ddf",
+        "rev": "f4554a25c39ea4bc8f42c036b78256787108b7a0",
         "type": "github"
       },
       "original": {
@@ -156,6 +177,27 @@
         "type": "github"
       }
     },
+    "pi-flake": {
+      "inputs": {
+        "home-manager": "home-manager_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787574887,
+        "narHash": "sha256-w/lBj8PtMS+gbrIKAUWkLOXyi7ynQUv3N4+ZltAMTwQ=",
+        "owner": "ChauDucToan",
+        "repo": "pi-flake",
+        "rev": "9543bb294b396f1d73817819bb82cf8755ee12e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ChauDucToan",
+        "repo": "pi-flake",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "disko": "disko",
@@ -163,6 +205,7 @@
         "niqol": "niqol",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
+        "pi-flake": "pi-flake",
         "xremap": "xremap",
         "zen-browser": "zen-browser"
       }

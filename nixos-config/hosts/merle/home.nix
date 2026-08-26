@@ -26,6 +26,7 @@
     ../../modules/home-manager/vicinae/vicinae-config.nix
     ../../modules/home-manager/direnv/direnv-config.nix
     ../../modules/home-manager/jujutsu/jujutsu-config.nix
+    ../../modules/home-manager/pi/pi-config.nix
 
     # === EXTRAS ===
     ../../modules/home-manager/quickshell/quickshell-config.nix

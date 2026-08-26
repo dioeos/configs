@@ -20,6 +20,11 @@
       url = "github:dioeos/niqol";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    pi-flake = {
+      url = "github:ChauDucToan/pi-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 
@@ -39,6 +44,8 @@
          inputs.disko.nixosModules.disko
          inputs.home-manager.nixosModules.default
          inputs.xremap.nixosModules.default
+
+         { nixpkgs.overlays = [ inputs.pi-flake.overlays.default ]; }
        ];
       };
     };
