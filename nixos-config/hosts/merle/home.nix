@@ -27,6 +27,7 @@
     ../../modules/home-manager/direnv/direnv-config.nix
     ../../modules/home-manager/jujutsu/jujutsu-config.nix
     ../../modules/home-manager/pi/pi-config.nix
+    ../../modules/home-manager/rust/rust-config.nix
 
     # === EXTRAS ===
     ../../modules/home-manager/quickshell/quickshell-config.nix

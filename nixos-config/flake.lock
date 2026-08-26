@@ -102,11 +102,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787770731,
-        "narHash": "sha256-yZMF2GDljoR57My99F8LXjQMFEeLZwPu1sdWow5PyPM=",
+        "lastModified": 1788109011,
+        "narHash": "sha256-j1PVO4aDQjR3T/7FNzl2jlAELHrIqzvDjjvmGbszGsk=",
         "owner": "dioeos",
         "repo": "niqol",
-        "rev": "f4554a25c39ea4bc8f42c036b78256787108b7a0",
+        "rev": "cb240de22e7591e6a02ddeacda3d4689bce281cf",
         "type": "github"
       },
       "original": {
@@ -185,11 +185,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787574887,
-        "narHash": "sha256-w/lBj8PtMS+gbrIKAUWkLOXyi7ynQUv3N4+ZltAMTwQ=",
+        "lastModified": 1788060132,
+        "narHash": "sha256-qwjpSU/9S/SWXDRNcA18REkSXcVIIYdzvEAI1JDBdJU=",
         "owner": "ChauDucToan",
         "repo": "pi-flake",
-        "rev": "9543bb294b396f1d73817819bb82cf8755ee12e5",
+        "rev": "22826910a18489ed65b337d4b57bd54c5be93f09",
         "type": "github"
       },
       "original": {
