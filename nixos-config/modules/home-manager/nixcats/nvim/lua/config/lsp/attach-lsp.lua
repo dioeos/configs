@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       })
     end
 
-    map("n", "<leader>hh", vim.lsp.buf.hover, "LSP hover")
+    map("n", "hd", vim.lsp.buf.hover, "LSP hover")
     map("n", "<leader>e", vim.diagnostic.open_float, "Show diagnostic")
     map("n", "<leader>da", "<cmd>Telescope diagnostics<CR>", "Show all file diagnostics")
     map("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
