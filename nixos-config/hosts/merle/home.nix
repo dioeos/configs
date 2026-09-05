@@ -26,6 +26,8 @@
     ../../modules/home-manager/vicinae/vicinae-config.nix
     ../../modules/home-manager/direnv/direnv-config.nix
     ../../modules/home-manager/jujutsu/jujutsu-config.nix
+    ../../modules/home-manager/pi/pi-config.nix
+    ../../modules/home-manager/rust/rust-config.nix
 
     # === EXTRAS ===
     ../../modules/home-manager/quickshell/quickshell-config.nix
@@ -35,8 +37,13 @@
     ../../modules/home-manager/obsidian/obsidian-config.nix
     ../../modules/home-manager/slack/slack-config.nix
     ../../modules/home-manager/anki/anki-config.nix
+    ../../modules/home-manager/brightnessctl/brightnessctl-config.nix
+    ../../modules/home-manager/tidal/tidal-config.nix
+    ../../modules/home-manager/bitwarden/bitwarden-config.nix
+    ../../modules/home-manager/prismlauncher/prismlauncher-config.nix
 
-    # ../../modules/home-manager/prismlauncher/prismlauncher-config.nix
+   # === PERSONAL DEV ===
+   ../../modules/home-manager/niqol/niqol-config.nix
   ];
 
   home.username = "dio";

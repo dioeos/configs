@@ -8,4 +8,4 @@ vim.opt.conceallevel = 2
 vim.opt.showtabline = 2
 
 vim.opt.termguicolors =true
-vim.cmd.colorscheme("vesper")
+vim.cmd.colorscheme("merle")

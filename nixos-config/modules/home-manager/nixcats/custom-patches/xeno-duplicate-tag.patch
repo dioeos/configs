@@ -1,0 +1,6 @@
+diff --git a/doc/xeno.txt b/doc/xeno.txt
+--- a/doc/xeno.txt
++++ b/doc/xeno.txt
+@@ -220,1 +220,1 @@
+-xeno.theme(name, config)                                   *xeno.theme()*
++xeno.theme(name, config)

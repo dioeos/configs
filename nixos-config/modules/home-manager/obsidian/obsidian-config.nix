@@ -74,6 +74,7 @@ in
             plugins.fast-note-sync
             plugins.omnisearch
             plugins.obsidian-to-anki
+            plugins.obsidian-ink
           ];
 
         };

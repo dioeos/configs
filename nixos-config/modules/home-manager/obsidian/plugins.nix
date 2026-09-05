@@ -3,21 +3,21 @@
 {
   fast-note-sync = pkgs.stdenv.mkDerivation {
     pname = "fast-note-sync";
-    version = "2.1.9";
+    version = "2.4.0";
 
     dontUnpack = true;
 
     manifest = pkgs.fetchurl {
-      url = "https://github.com/haierkeys/obsidian-fast-note-sync/releases/download/2.1.9/manifest.json";
-      hash = "sha256:dbf379610f0d2b56734a4f8e5c85453a090e930652c71a040f23ee4230944d5d";
+      url = "https://github.com/haierkeys/obsidian-fast-note-sync/releases/download/2.4.0/manifest.json";
+      hash = "sha256:ae291d946cf147ed23a9336c998e597077e2a1de0200a762f353c1f2f3defe81";
     };
     main = pkgs.fetchurl {
-      url = "https://github.com/haierkeys/obsidian-fast-note-sync/releases/download/2.1.9/main.js";
-      hash = "sha256:dae2844dc6047abddf4957eac472732e1f124d27d8094641741b958cc73be38c";
+      url = "https://github.com/haierkeys/obsidian-fast-note-sync/releases/download/2.4.0/main.js";
+      hash = "sha256:24fdef9efb9da7efcc0b2e1df09308e48a53522d768da4705e9bc35422b7bc4f";
     };
     styles = pkgs.fetchurl {
-      url = "https://github.com/haierkeys/obsidian-fast-note-sync/releases/download/2.1.9/styles.css";
-      hash = "sha256:9d36c36890c64e5a702e2b6fca218f0b21a249a16311b79e4656b6f9cb3c3f88";
+      url = "https://github.com/haierkeys/obsidian-fast-note-sync/releases/download/2.4.0/styles.css";
+      hash = "sha256:bce9ead5a96daea52ab573eff9e7f3a4824828835bd778ddd4424803f2655cb9";
     };
 
     installPhase = ''
@@ -72,6 +72,33 @@
     styles = pkgs.fetchurl {
       url = "https://github.com/ObsidianToAnki/Obsidian_to_Anki/releases/download/3.6.0/styles.css";
       hash = "sha256-iv3uGArAQeYdLA0FPhyVOqR22VxjKiu+Yz6lfD7/LBM=";
+    };
+
+    installPhase = ''
+      mkdir -p $out
+      cp $manifest $out/manifest.json
+      cp $main $out/main.js
+      cp $styles $out/styles.css
+    '';
+  };
+
+  obsidian-ink = pkgs.stdenv.mkDerivation {
+    pname = "obsidian-ink";
+    version = "0.5.6";
+
+    dontUnpack = true;
+
+    manifest = pkgs.fetchurl {
+      url = "https://github.com/daledesilva/obsidian_ink/releases/download/0.5.6/manifest.json";
+      hash = "sha256:8eea071404969630525f824833139dc3f9783899df610238998668e26efc9f7f";
+    };
+    main = pkgs.fetchurl {
+      url = "https://github.com/daledesilva/obsidian_ink/releases/download/0.5.6/main.js";
+      hash = "sha256:3d525dbe1973224b04dc4f054d84bf5eb13fdaebebbbe8d6124af12e181180ad";
+    };
+    styles = pkgs.fetchurl {
+      url = "https://github.com/daledesilva/obsidian_ink/releases/download/0.5.6/styles.css";
+      hash = "sha256:e263b99963bee0201f8476e8532e14e410c9ae29319c55e4f10b400b3481272d";
     };
 
     installPhase = ''
