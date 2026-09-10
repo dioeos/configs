@@ -70,6 +70,7 @@ in
               themery-nvim
               oil-nvim
               flash-nvim
+              marks-nvim
             ];
 
             notes = with pkgs.vimPlugins; [
@@ -90,7 +91,7 @@ in
       packageDefinitions.replace = {
         myHomeModuleNvim = { pkgs, ... }: {
           settings = {
-            aliases = [ "vim" "nvim" ];
+            aliases = [ "vim" "nvim" "vi" ];
           };
 
           categories = {
