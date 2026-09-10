@@ -36,6 +36,7 @@ in
               blink-cmp
               luasnip
               friendly-snippets
+              promise-async
             ];
 
             navigation = with pkgs.vimPlugins; [
@@ -71,6 +72,7 @@ in
               oil-nvim
               flash-nvim
               marks-nvim
+              nvim-ufo
             ];
 
             notes = with pkgs.vimPlugins; [

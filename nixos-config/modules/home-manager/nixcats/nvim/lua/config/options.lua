@@ -7,5 +7,9 @@ vim.opt.expandtab = true
 vim.opt.conceallevel = 2
 vim.opt.showtabline = 2
 
+-- to prevent ufo auto folding
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+
 vim.opt.termguicolors =true
 vim.cmd.colorscheme("merle")
