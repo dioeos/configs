@@ -8,3 +8,5 @@ require("lze").load({
     end
   }
 })
+
+vim.keymap.set("n", "<leader>f", "za")
