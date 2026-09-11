@@ -13,6 +13,10 @@ require("lze").load({
       require("themery").setup({
         themes = {
           {
+            name = "oxocarbon",
+            colorscheme = "oxocarbon"
+          },
+          {
             name = "kanagawa",
             colorscheme = "kanagawa"
           },

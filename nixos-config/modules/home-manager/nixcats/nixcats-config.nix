@@ -47,6 +47,7 @@ in
 
             colorschemes = with pkgs.vimPlugins; [
               kanagawa-nvim
+              oxocarbon-nvim
             ] ++ [
               customColorschemes.vesper
               customColorschemes.nvimgelion
