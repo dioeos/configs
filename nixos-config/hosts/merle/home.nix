@@ -28,6 +28,8 @@
     ../../modules/home-manager/jujutsu/jujutsu-config.nix
     ../../modules/home-manager/pi/pi-config.nix
     ../../modules/home-manager/rust/rust-config.nix
+    ../../modules/home-manager/go/go-config.nix
+    ../../modules/home-manager/horse/horse-config.nix
 
     # === EXTRAS ===
     ../../modules/home-manager/quickshell/quickshell-config.nix

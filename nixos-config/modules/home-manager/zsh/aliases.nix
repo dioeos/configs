@@ -8,5 +8,6 @@
     lg = "lazygit";
     rez = "source ~/.zshrc";
     cd = "z";
+    h = ''eval "$(horse)"'';
   };
 }
