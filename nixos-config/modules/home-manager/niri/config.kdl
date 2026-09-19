@@ -99,6 +99,11 @@ window-rule {
   }
 }
 
+window-rule {
+  match app-id="^wizard101$"
+  open-floating true
+}
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -671,19 +676,17 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Super+Shift+1 {
-        spawn "/etc/profiles/per-user/dio/bin/cargo" "niqol" "mark-window" "1";
-    }
+    Super+Shift+1 { spawn "cargo" "niqol" "mark-window" "1"; }
     Super+Shift+2 { spawn "cargo" "niqol" "mark-window" "2"; }
     Super+Shift+3 { spawn "cargo" "niqol" "mark-window" "3"; }
     Super+Shift+4 { spawn "cargo" "niqol" "mark-window" "4"; }
     Super+Shift+5 { spawn "cargo" "niqol" "mark-window" "5"; }
 
-    Super+1 {
-        spawn "/etc/profiles/per-user/dio/bin/cargo" "niqol" "focus-mark" "1";
-    }
+    Super+1 { spawn "cargo" "niqol" "focus-mark" "1"; }
     Super+2 { spawn "cargo" "niqol" "focus-mark" "2"; }
     Super+3 { spawn "cargo" "niqol" "focus-mark" "3"; }
     Super+4 { spawn "cargo" "niqol" "focus-mark" "4"; }
     Super+5 { spawn "cargo" "niqol" "focus-mark" "5"; }
+
+    Mod+N { spawn "cargo" "niqol" "next-mark"; }
 }
