@@ -45,7 +45,7 @@
     ../../modules/home-manager/prismlauncher/prismlauncher-config.nix
 
    # === PERSONAL DEV ===
-   ../../modules/home-manager/niqol/niqol-config.nix
+   ../../modules/home-manager/feiri/feiri-config.nix
   ];
 
   home.username = "dio";

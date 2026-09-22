@@ -104,6 +104,11 @@ window-rule {
   open-floating true
 }
 
+window-rule {
+  match title="feiri-ui"
+  open-floating true
+}
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -611,7 +616,7 @@ binds {
     // maximize-window-to-edges doesn't: the window expands to the edges of the screen.
     // This bind corresponds to normal window maximizing,
     // e.g. by double-clicking on the titlebar.
-    Mod+M { maximize-window-to-edges; }
+    // Mod+Shift+M { maximize-window-to-edges; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
@@ -676,18 +681,30 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Super+Shift+1 { spawn "cargo" "niqol" "mark-window" "1"; }
-    Super+Shift+2 { spawn "cargo" "niqol" "mark-window" "2"; }
-    Super+Shift+3 { spawn "cargo" "niqol" "mark-window" "3"; }
-    Super+Shift+4 { spawn "cargo" "niqol" "mark-window" "4"; }
-    Super+Shift+5 { spawn "cargo" "niqol" "mark-window" "5"; }
+    Super+Shift+1 { spawn "fury" "msg" "action" "mark-window" "1"; }
+    Super+Shift+2 { spawn "fury" "msg" "action" "mark-window" "2"; }
+    Super+Shift+3 { spawn "fury" "msg" "action" "mark-window" "3"; }
+    Super+Shift+4 { spawn "fury" "msg" "action" "mark-window" "4"; }
+    Super+Shift+5 { spawn "fury" "msg" "action" "mark-window" "5"; }
+    Super+Shift+6 { spawn "fury" "msg" "action" "mark-window" "6"; }
+    Super+Shift+7 { spawn "fury" "msg" "action" "mark-window" "7"; }
+    Super+Shift+8 { spawn "fury" "msg" "action" "mark-window" "8"; }
+    Super+Shift+9 { spawn "fury" "msg" "action" "mark-window" "9"; }
 
-    Super+1 { spawn "cargo" "niqol" "focus-mark" "1"; }
-    Super+2 { spawn "cargo" "niqol" "focus-mark" "2"; }
-    Super+3 { spawn "cargo" "niqol" "focus-mark" "3"; }
-    Super+4 { spawn "cargo" "niqol" "focus-mark" "4"; }
-    Super+5 { spawn "cargo" "niqol" "focus-mark" "5"; }
+    Super+1 { spawn "fury" "msg" "action" "focus-mark" "1"; }
+    Super+2 { spawn "fury" "msg" "action" "focus-mark" "2"; }
+    Super+3 { spawn "fury" "msg" "action" "focus-mark" "3"; }
+    Super+4 { spawn "fury" "msg" "action" "focus-mark" "4"; }
+    Super+5 { spawn "fury" "msg" "action" "focus-mark" "5"; }
+    Super+6 { spawn "fury" "msg" "action" "focus-mark" "6"; }
+    Super+7 { spawn "fury" "msg" "action" "focus-mark" "7"; }
+    Super+8 { spawn "fury" "msg" "action" "focus-mark" "8"; }
+    Super+9 { spawn "fury" "msg" "action" "focus-mark" "9"; }
 
-    Mod+N { spawn "cargo" "niqol" "next-mark"; }
-    Mod+B { spawn "cargo" "niqol" "prev-mark"; }
+    Mod+N { spawn "fury" "msg" "action" "next-mark"; }
+    Mod+B { spawn "fury" "msg" "action" "prev-mark"; }
+
+    Mod+M {
+        spawn "sh" "-c" "if pkill feiri-ui; then :; else exec feiri-ui; fi";
+    }
 }

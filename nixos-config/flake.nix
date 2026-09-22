@@ -16,8 +16,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niqol = {
-      url = "github:dioeos/niqol";
+    feiri = {
+      url = "github:dioeos/feiri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

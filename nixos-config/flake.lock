@@ -35,6 +35,26 @@
         "type": "github"
       }
     },
+    "feiri": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791170149,
+        "narHash": "sha256-+klrQHNpaPMaVnmmmmSLwCUs5pZT5HW9/n8794obbqo=",
+        "owner": "dioeos",
+        "repo": "feiri",
+        "rev": "dc5be19416cb66c282baf50bc092461a60c30620",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dioeos",
+        "repo": "feiri",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -92,26 +112,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "niqol": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1790090471,
-        "narHash": "sha256-JCu5InRy1rGWYzUOELcExh7TZMhbjiuNa6uNlLEaABI=",
-        "owner": "dioeos",
-        "repo": "niqol",
-        "rev": "54278d55988ca8e2759575e4833605bd43eb6b61",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dioeos",
-        "repo": "niqol",
         "type": "github"
       }
     },
@@ -201,8 +201,8 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "feiri": "feiri",
         "home-manager": "home-manager",
-        "niqol": "niqol",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
         "pi-flake": "pi-flake",
