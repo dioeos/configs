@@ -102,11 +102,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790029209,
-        "narHash": "sha256-dH739wBwPamAV4YmHJjPmg1EGLw9fTzktbLyTYe97wU=",
+        "lastModified": 1790090471,
+        "narHash": "sha256-JCu5InRy1rGWYzUOELcExh7TZMhbjiuNa6uNlLEaABI=",
         "owner": "dioeos",
         "repo": "niqol",
-        "rev": "f6d9457f6c70ba67fd5821356a5d9e2a281de346",
+        "rev": "54278d55988ca8e2759575e4833605bd43eb6b61",
         "type": "github"
       },
       "original": {

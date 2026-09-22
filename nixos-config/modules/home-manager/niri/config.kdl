@@ -689,4 +689,5 @@ binds {
     Super+5 { spawn "cargo" "niqol" "focus-mark" "5"; }
 
     Mod+N { spawn "cargo" "niqol" "next-mark"; }
+    Mod+B { spawn "cargo" "niqol" "prev-mark"; }
 }
