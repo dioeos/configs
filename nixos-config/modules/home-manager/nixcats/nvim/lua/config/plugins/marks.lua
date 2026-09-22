@@ -34,8 +34,8 @@ require("lze").load({
         },
         mappings = {
           set_next = "m;",
-          next = "m.",
-          prev = "m,",
+          next = "nm",
+          prev = "bm",
           delete_line = "dm-",
           delete_buf = "dma",
           delete_bookmark = "dmb",
