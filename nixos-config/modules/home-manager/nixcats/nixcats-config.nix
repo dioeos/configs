@@ -50,8 +50,8 @@ in
               oxocarbon-nvim
             ] ++ [
               customColorschemes.vesper
-              customColorschemes.nvimgelion
               customColorschemes.ashen
+              customColorschemes.guts
             ];
 
             utilities = [

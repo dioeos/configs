@@ -33,8 +33,8 @@ require("lze").load({
             colorscheme = "vesper"
           },
           {
-            name = "nvimgelion",
-            colorscheme = "nvimgelion"
+            name = "guts",
+            colorscheme = "guts"
           }
         }
       })
