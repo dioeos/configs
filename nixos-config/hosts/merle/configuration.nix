@@ -28,7 +28,11 @@
   services.udisks2.enable = true;
   services.gvfs.enable = true;
 
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = false;
+  };
 
   networking.firewall.allowedTCPPorts = [ 5173 ];
 
@@ -60,6 +64,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    python3
     git
     xwayland-satellite
     udiskie

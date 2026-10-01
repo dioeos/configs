@@ -4,6 +4,10 @@
   programs.zsh.profileExtra = ''
     echo "Loading nix zprofile module... Merle welcomes you."
 
+    if [ -f "$HOME/.local/share/swiftly/env.sh" ]; then
+      source "$HOME/.local/share/swiftly/env.sh"
+    fi
+
     if ! [[ "$PATH" =~ "$HOME/bin" ]]; then
       PATH="$HOME/bin:$PATH"
     fi
