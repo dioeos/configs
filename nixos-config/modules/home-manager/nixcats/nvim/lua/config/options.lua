@@ -12,4 +12,4 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 
 vim.opt.termguicolors =true
-vim.cmd.colorscheme("merle")
+vim.cmd.colorscheme("vesper")

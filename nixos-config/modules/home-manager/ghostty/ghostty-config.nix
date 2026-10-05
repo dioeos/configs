@@ -7,7 +7,7 @@
     settings = {
       font-size = 14;
       window-decoration = "none";
-      background-opacity = 0.7;
+      background-opacity = 0.9;
       custom-shader = "/home/dio/dots/shaders/cursor_smear.glsl";
       cursor-style = "block";
       cursor-style-blink = true;
