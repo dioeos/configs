@@ -42,11 +42,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791170149,
-        "narHash": "sha256-+klrQHNpaPMaVnmmmmSLwCUs5pZT5HW9/n8794obbqo=",
+        "lastModified": 1791566990,
+        "narHash": "sha256-/l4wgxV+9TKgXCBAchhLXYVVcW/zle8s0keGqwLIh+4=",
         "owner": "dioeos",
         "repo": "feiri",
-        "rev": "dc5be19416cb66c282baf50bc092461a60c30620",
+        "rev": "9dce6f8cc8e85fe6fa8502a163abecd8bcd36169",
         "type": "github"
       },
       "original": {

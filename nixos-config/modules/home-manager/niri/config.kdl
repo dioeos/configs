@@ -107,6 +107,9 @@ window-rule {
 window-rule {
   match title="feiri-ui"
   open-floating true
+  focus-ring { 
+    off 
+  }
 }
 
 // You can configure outputs by their name, which you can find
@@ -701,6 +704,7 @@ binds {
     Super+8 { spawn "fury" "msg" "action" "focus-mark" "8"; }
     Super+9 { spawn "fury" "msg" "action" "focus-mark" "9"; }
 
+    Mod+Shift+M { spawn "fury" "msg" "action" "mark-window-next"; }
     Mod+N { spawn "fury" "msg" "action" "next-mark"; }
     Mod+B { spawn "fury" "msg" "action" "prev-mark"; }
 
