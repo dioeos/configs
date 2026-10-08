@@ -25,6 +25,16 @@
       url = "github:ChauDucToan/pi-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    microvm = {
+      url = "github:microvm-nix/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    redjaxk = {
+      url = "github:dioeos/redjaxk";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 
@@ -41,9 +51,11 @@
 
        modules = [
          ./hosts/merle/configuration.nix
+         ./hosts/merle/microvms.nix
          inputs.disko.nixosModules.disko
          inputs.home-manager.nixosModules.default
          inputs.xremap.nixosModules.default
+         inputs.microvm.nixosModules.host
 
          { nixpkgs.overlays = [ inputs.pi-flake.overlays.default ]; }
        ];
