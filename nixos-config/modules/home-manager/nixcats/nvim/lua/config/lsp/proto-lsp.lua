@@ -3,3 +3,4 @@ vim.lsp.config("buf-lsp", {
   filetypes = { "proto" },
   root_marks = { "buf.yaml", ".git" }
 })
+vim.lsp.enable("buf-lsp")
