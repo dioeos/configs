@@ -272,11 +272,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791909734,
-        "narHash": "sha256-EMwhnCHg7qd0dViIGh1S4MzYhLAsSuPthPxG7bR+AtA=",
+        "lastModified": 1791919894,
+        "narHash": "sha256-HF0FTjo6BOirqcWOm7PRzQAvsB/wnLaDkIYvRcJABEY=",
         "owner": "dioeos",
         "repo": "redjaxk",
-        "rev": "e22eb695dd4a3366ec18c66b4e387c19872ef6c9",
+        "rev": "76397ba8c680c69df2568dbdb873e96c8f0d1a20",
         "type": "github"
       },
       "original": {

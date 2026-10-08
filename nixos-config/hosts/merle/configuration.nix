@@ -35,6 +35,11 @@
   };
 
   networking.firewall.allowedTCPPorts = [ 5173 ];
+  networking.nat = {
+    enable = true;
+    internalInterfaces = [ "br-redjaxk" ];
+    externalInterface = "wlp9s0f0";
+  };
 
   networking.hostName = "merle"; # Define your hostname.
   system.nixos.label = "merle-v3.0.0";
